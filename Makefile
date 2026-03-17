@@ -3,7 +3,10 @@
 # Compiler and flags
 CC = clang
 CFLAGS = -Wall -Wextra -std=c99 -g
-LDFLAGS = 
+RAYLIB_CFLAGS = $(shell echo "-I/usr/local/Cellar/raylib/5.5/include")
+RAYLIB_LIBS = $(shell echo "-L/usr/local/Cellar/raylib/5.5/lib -L/usr/local/lib -lraylib")
+CFLAGS += $(RAYLIB_CFLAGS)
+LDFLAGS = $(RAYLIB_LIBS)
 
 # Directories
 SRC_DIR = src
